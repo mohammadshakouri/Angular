@@ -1,0 +1,16 @@
+<form>
+    <label for="name">Name:</label>
+    <input [disabled]="disableName" id="name" name="name" type="text" (input)="handleInputChange($event)" />
+    
+    <label for="email">Email:</label>
+    <input [disabled]="disableEmail" id="email" name="email" type="email" [(ngModel)]="inputTextEmail" />
+    
+    <button type="submit">Submit</button>
+    <div>
+        resultName: {{inputTextName}}
+    </div>
+    <br>
+    <div>
+        resultEmail: {{inputTextEmail}}
+    </div>
+</form>

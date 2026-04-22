@@ -1,12 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { ToDoList } from './to-do-list/to-do-list';
+import { ProductsList } from "./components/products-list/products-list";
+import { MyForm } from './components/my-form/my-form';
 
 @Component({
-  selector: 'app',
-  imports: [ToDoList],
+  selector: 'app-root',
+  imports: [ProductsList,MyForm],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.scss']
 })
+
 export class App {
-  protected readonly title = signal('client');
+  // protected readonly title = signal('client');
+  isAuthenticated = true;
+  userStatus = "active";
+
 }

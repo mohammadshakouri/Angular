@@ -1,2 +1,24 @@
-<h1>hello from angualr</h1>
-<ToDoList></ToDoList>
+<div class="container">
+    @if(isAuthenticated){
+        <div>welcome</div>
+        @switch (userStatus) {
+            @case ("active") {
+                <div>user is active</div>
+            }
+            @case ("disabled") {
+                <div>user is disabled</div>
+            }
+            @default {
+                <div>unknown status</div>
+            }
+        }
+        <div>{{userStatus}}</div>
+    }
+    @else {
+        <div>please login</div>
+    }
+<my-form>
+</my-form>
+<products-list></products-list>
+</div>
+
