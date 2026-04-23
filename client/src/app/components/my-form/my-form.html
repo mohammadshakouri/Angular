@@ -1,16 +1,14 @@
-<form>
+<form class="my-form" (ngSubmit)="handleSubmit()">
     <label for="name">Name:</label>
-    <input [disabled]="disableName" id="name" name="name" type="text" (input)="handleInputChange($event)" />
+    <input [disabled]="createUser.isDisabled" class="form-control" id="name" name="name" type="text" [(ngModel)]="createUser.name" />
     
     <label for="email">Email:</label>
-    <input [disabled]="disableEmail" id="email" name="email" type="email" [(ngModel)]="inputTextEmail" />
+    <input [disabled]="createUser.isDisabledEmail" class="form-control" id="email" name="email" type="email" [(ngModel)]="createUser.email" />
     
-    <button type="submit">Submit</button>
-    <div>
-        resultName: {{inputTextName}}
-    </div>
-    <br>
-    <div>
-        resultEmail: {{inputTextEmail}}
+    <button type="submit" [ngClass]="btnSubmitClass">Submit</button>
+    <div class="mt-3">
+        resultName: {{createUser.name}} 
+        <br>
+        resultEmail: {{createUser.email}}
     </div>
 </form>
