@@ -1,24 +1,25 @@
 <div class="container">
-    @if(isAuthenticated){
-        <div>welcome</div>
-        @switch (userStatus) {
-            @case ("active") {
-                <div>user is active</div>
-            }
-            @case ("disabled") {
-                <div>user is disabled</div>
-            }
-            @default {
-                <div>unknown status</div>
-            }
-        }
-        <div>{{userStatus}}</div>
+  @if (isAuthenticated) {
+    <div>welcome</div>
+    @switch (userStatus) {
+      @case ('active') {
+        <div>user is active</div>
+      }
+      @case ('disabled') {
+        <div>user is disabled</div>
+      }
+      @default {
+        <div>unknown status</div>
+      }
     }
-    @else {
-        <div>please login</div>
-    }
-<my-form>
-</my-form>
-<products-list></products-list>
+    <div>{{ userStatus }}</div>
+  } @else {
+    <div>please login</div>
+  }
+  <my-form> </my-form>
+  <products-list></products-list>
+  <card>
+    <div>hello from mohammad this will place in card</div>
+    <p>This is the body content of the card.</p>
+  </card>
 </div>
-

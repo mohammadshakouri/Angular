@@ -1,0 +1,28 @@
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.card-content {
+  font-size: 1rem;
+  color: #333;
+}
+.card-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.card-footer button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
