@@ -12,7 +12,15 @@ import { Card } from "./components/card/card";
 
 export class App {
   // protected readonly title = signal('client');
-  isAuthenticated = true;
+  isAuthenticated = false;
   userStatus = "active";
+
+  handleLogin() {
+    this.isAuthenticated = true;
+  }
+
+  handleLogout() {
+    this.isAuthenticated = false;
+  }
 
 }
