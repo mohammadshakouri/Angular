@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { CourseList } from './components/course/course-list/course-list';
-import { CreateCourse } from './components/course/create-course/create-course';
+import { RouterOutlet } from '@angular/router';
+import { NavBar } from './components/nav-bar/nav-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [CourseList,CreateCourse],
+  imports: [RouterOutlet, NavBar],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
