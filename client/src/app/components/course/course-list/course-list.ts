@@ -12,8 +12,8 @@ import { CourseService } from '../../../services/courseService';
 export class CourseList {
 
   courses: ICourse[];
-  constructor() {
-    this.courses = CourseService.getCourses();
+  constructor(private courseService: CourseService) {
+    this.courses = this.courseService.getCourses();
   }
 
 }

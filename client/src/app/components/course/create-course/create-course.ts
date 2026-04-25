@@ -10,6 +10,7 @@ import { CourseService } from '../../../services/courseService';
   styleUrl: './create-course.scss',
 })
 export class CreateCourse {
+  constructor(private courseService: CourseService) {}
   course: createCourseDto = {
     title: '',
     description: '',
@@ -18,7 +19,7 @@ export class CreateCourse {
 
   handleCreateCourse() {
     if (this.course.title && this.course.description && this.course.price > 0) {
-      CourseService.addCourse(this.course);
+      this.courseService.addCourse(this.course);
       // Reset the form
       this.course = {
         title: '',
