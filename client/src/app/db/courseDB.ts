@@ -2,7 +2,7 @@ import { get } from "http";
 import { ICourse } from "../entities/ICourse";
 import { createCourseDto } from "../dtoS/courseDto";
 
-const courses:ICourse[] = [
+export const coursesData:ICourse[] = [
     {
         id:1,
         title:"Course 1",
@@ -30,21 +30,21 @@ const courses:ICourse[] = [
         description:"Description for Course 4",
         price:250,
         coverImageSrc:"https://picsum.photos/400/200"
+    },
+    {
+        id:5,
+        title:"Course 5",
+        description:"Description for Course 5",
+        price:300,
+        coverImageSrc:"https://picsum.photos/400/200"
+    },
+    {
+        id:6,
+        title:"Course 6",
+        description:"Description for Course 6",
+        price:350,
+        coverImageSrc:"https://picsum.photos/400/200"
     }
-    // {
-    //     id:5,
-    //     title:"Course 5",
-    //     description:"Description for Course 5",
-    //     price:300,
-    //     coverImageSrc:"https://picsum.photos/400/200"
-    // },
-    // {
-    //     id:6,
-    //     title:"Course 6",
-    //     description:"Description for Course 6",
-    //     price:350,
-    //     coverImageSrc:"https://picsum.photos/400/200"
-    // },
     // {
     //     id:7,
     //     title:"Course 7",
@@ -74,20 +74,3 @@ const courses:ICourse[] = [
     //     coverImageSrc:"https://picsum.photos/400/200"
     // }
 ]
-
-export const courseContext = {
-    getCourses:():ICourse[] => {
-        return courses;
-    },
-    getCourseById:(id:number):ICourse | undefined => {
-        return courses.find(course => course.id === id);
-    },
-    addCourse:(course:createCourseDto):void => {
-        const newCourse: ICourse = {
-            id: courses.length + 1,
-            coverImageSrc:"https://picsum.photos/400/200",
-            ...course
-        };
-        courses.push(newCourse);
-    }
-}

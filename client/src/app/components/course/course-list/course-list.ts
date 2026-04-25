@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { courseContext } from '../../../db/courseDB';
 import { ICourse } from '../../../entities/ICourse';
 import { CourseItem } from '../course-item/course-item';
+import { CourseService } from '../../../services/courseService';
 
 @Component({
   selector: 'course-list',
@@ -13,7 +13,7 @@ export class CourseList {
 
   courses: ICourse[];
   constructor() {
-    this.courses = courseContext.getCourses();
+    this.courses = CourseService.getCourses();
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { createCourseDto } from '../../../dtoS/courseDto';
 import { FormsModule } from "@angular/forms";
-import { courseContext } from '../../../db/courseDB';
+import { CourseService } from '../../../services/courseService';
 
 @Component({
   selector: 'create-course',
@@ -18,7 +18,7 @@ export class CreateCourse {
 
   handleCreateCourse() {
     if (this.course.title && this.course.description && this.course.price > 0) {
-      courseContext.addCourse(this.course);
+      CourseService.addCourse(this.course);
       // Reset the form
       this.course = {
         title: '',
