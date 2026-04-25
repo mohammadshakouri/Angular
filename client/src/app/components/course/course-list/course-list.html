@@ -1,0 +1,6 @@
+<h1>Course List</h1>
+<div class="course-list">
+    @for (item of courses;track item.id;) {
+        <course-item [course]="item"></course-item>
+    }
+</div>

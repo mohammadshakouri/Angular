@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { courseContext } from '../../../db/courseDB';
+import { ICourse } from '../../../entities/ICourse';
+import { CourseItem } from '../course-item/course-item';
+
+@Component({
+  selector: 'course-list',
+  imports: [CourseItem],
+  templateUrl: './course-list.html',
+  styleUrl: './course-list.scss',
+})
+export class CourseList {
+
+  courses: ICourse[];
+  constructor() {
+    this.courses = courseContext.getCourses();
+  }
+
+}

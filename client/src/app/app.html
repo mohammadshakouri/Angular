@@ -1,29 +1,15 @@
 <div class="container mt-2">
   @if (isAuthenticated) {
-    <div class="alert alert-success">
-      <div>welcome</div>
-      @switch (userStatus) {
-        @case ('active') {
-          <div>user is active</div>
-        }
-        @case ('disabled') {
-          <div>user is disabled</div>
-        }
-        @default {
-          <div>unknown status</div>
-        }
-      }
-      <div>{{ userStatus }}</div>
-      <button class="btn btn-danger mt-2" (click)="handleLogout()">Logout</button>
+    <div class="alert alert-success mb-1">
+      <span>welcome </span>
+      <span>user is {{ userStatus }}</span>
+      <button class="btn btn-danger mx-2" (click)="handleLogout()">Logout</button>
     </div>
   } @else {
-    <div class="alert alert-warning mb-1">please login</div>
-    <button class="btn btn-primary" (click)="handleLogin()">Login</button>
+    <div class="alert alert-warning mb-1">please login
+      <button class="btn btn-primary" (click)="handleLogin()">Login</button>
+    </div>
   }
-  <my-form> </my-form>
-  <products-list></products-list>
-  <card>
-    <div>hello from mohammad this will place in card</div>
-    <p>This is the body content of the card.</p>
-  </card>
+  <create-course></create-course>
+  <course-list></course-list>
 </div>
