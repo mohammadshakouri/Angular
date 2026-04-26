@@ -8,6 +8,7 @@ import { CourseService } from '../../../services/courseService';
   imports: [CourseItem],
   templateUrl: './course-list.html',
   styleUrl: './course-list.scss',
+  //providers: [CourseService], is not needed because we are using providedIn: 'root'
 })
 export class CourseList {
 
