@@ -13,6 +13,7 @@ import { routes } from './app.routes';
 import { authInterceptor } from './interceptors/auth-interceptor';
 import { loggingInterceptor } from './interceptors/logging-interceptor';
 import { AppEnvService } from './services/app-env';
+import { initialInterceptor } from './interceptors/initial-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(
       withFetch(),
-      withInterceptors([authInterceptor, loggingInterceptor])
+      withInterceptors([authInterceptor, loggingInterceptor, initialInterceptor])
     ),
     provideAppInitializer(() => {
       const appEnv = inject(AppEnvService);
