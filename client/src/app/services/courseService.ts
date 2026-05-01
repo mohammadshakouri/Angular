@@ -20,7 +20,7 @@ export class CourseService {
   addCourse(course: createCourseDto): void {
     const newCourse: ICourse = {
       id: coursesData.length + 1,
-      coverImageSrc: 'https://picsum.photos/400/200',
+      coverImageSrc: 'images/course.jpg',
       ...course,
     };
     coursesData.push(newCourse);
