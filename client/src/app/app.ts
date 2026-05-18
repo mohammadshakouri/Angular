@@ -12,7 +12,7 @@ import { CaptionService } from './services/caption.service';
   styleUrls: ['./app.scss'],
 })
 export class App {
-  constructor(private appEnv: AppEnvService, private caption: CaptionService) {}
+  constructor(private appEnv: AppEnvService) {}
   signaleCount = signal<number>(0);
   simpleCount = 0;
 
