@@ -29,6 +29,6 @@ export const appConfig: ApplicationConfig = {
       const appEnv = inject(AppEnvService);
       return appEnv.load();
     }),
-    {provide: MAT_DATE_LOCALE, useValue: 'fa-IR'},
+    { provide: MAT_DATE_LOCALE, useFactory: () => inject(AppEnvService).culture },
   ],
-};
+};          
