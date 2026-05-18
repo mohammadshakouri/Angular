@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { AppEnvService } from './services/app-env';
 import { DatePicker } from './components/date-picker/date-picker';
+import { CaptionService } from './services/caption.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { DatePicker } from './components/date-picker/date-picker';
   styleUrls: ['./app.scss'],
 })
 export class App {
-  constructor(private appEnv: AppEnvService) {}
+  constructor(private appEnv: AppEnvService, private caption: CaptionService) {}
   signaleCount = signal<number>(0);
   simpleCount = 0;
 

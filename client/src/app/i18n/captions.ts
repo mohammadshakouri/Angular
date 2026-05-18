@@ -4,6 +4,11 @@ export interface ICaption {
     courses: string;
     createCourse: string;
     time: string;
+    dropdown: string;
+    action: string;
+    anotherAction: string;
+    delayText: string;
+    loadingText: string;
   };
   courseList: {
     title: string;
@@ -23,7 +28,13 @@ export const captions: Record<string, ICaption> = {
       home: 'Home',
       courses: 'Courses',
       createCourse: 'Create Course',
-      time: 'Current Time',},
+      time: 'Current Time',
+      dropdown: 'Dropdown',
+      action: 'Action',
+      anotherAction: 'Another action',
+      delayText: 'This text has appeared after 4 seconds',
+      loadingText: 'This is loading...',
+    },
     courseList: {
       title: 'Course List',
     },
@@ -41,6 +52,11 @@ export const captions: Record<string, ICaption> = {
       courses: 'دوره‌ها',
       createCourse: 'ایجاد دوره',
       time: 'زمان فعلی',
+      dropdown: 'منو',
+      action: 'عملیات',
+      anotherAction: 'عملیات دیگر',
+      delayText: 'این متن پس از ۴ ثانیه ظاهر شده است',
+      loadingText: 'در حال بارگذاری...',
     },
     courseList: {
       title: 'لیست دوره‌ها',

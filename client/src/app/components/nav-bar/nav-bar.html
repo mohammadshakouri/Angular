@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light radius-2">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">{{ caption.get('nav.home') }}</a>
     <button
@@ -30,21 +30,19 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown
+        {{caption.get('nav.dropdown')}}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">{{ caption.get('nav.action') }}</a></li>
+            <li><a class="dropdown-item" href="#">{{ caption.get('nav.anotherAction') }}</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">
             @defer (on timer(4000ms)) {
-              <span>this text has appeared after 4 seconds</span>
+              <span>{{ caption.get('nav.delayText') }}</span>
             } @loading {
-              <span>this is loading...</span>
+              <span>{{ caption.get('nav.loadingText') }}</span>
             }
           </a>
         </li>

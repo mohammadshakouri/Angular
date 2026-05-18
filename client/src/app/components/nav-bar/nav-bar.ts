@@ -15,7 +15,7 @@ import { CaptionService } from '../../services/caption.service';
 })
 
 export class NavBar {
-  constructor(public caption: CaptionService) {}
+  constructor(private caption: CaptionService) {}
 
   currentTime$ = interval(1000).pipe(
     startWith(0),
