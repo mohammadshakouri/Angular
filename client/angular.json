@@ -31,7 +31,17 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/styles/en-US.scss",
+                "bundleName": "en-US",
+                "inject": false
+              },
+              {
+                "input": "src/styles/fa-IR.scss",
+                "bundleName": "fa-IR",
+                "inject": false
+              }
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",

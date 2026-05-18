@@ -31,11 +31,26 @@ export class AppEnvService {
         this.config = config;
         this.document.documentElement.dir = this.direction;
         this.document.documentElement.lang = this.culture;
+        this.loadCultureStyle(this.culture);
       })
       .catch((error) => {
         console.error('Config load failed', error);
         return Promise.reject(error);
       });
+  }
+
+  private loadCultureStyle(culture?: string): void {
+    const styleId = 'culture-style';
+    const existing = this.document.getElementById(styleId);
+    if (existing) {
+      existing.remove();
+    }
+    const link = this.document.createElement('link');
+    link.id = styleId;
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = `/${culture}.css`;
+    this.document.head.appendChild(link);
   }
 
   get apiBaseUrl(): string {
