@@ -3,6 +3,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import { CaptionService } from '../../services/caption.service';
 
 @Component({
   selector: 'date-picker',
@@ -12,4 +13,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
   styleUrl: './date-picker.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DatePicker {}
+export class DatePicker {
+
+  constructor(public caption: CaptionService) {}
+}

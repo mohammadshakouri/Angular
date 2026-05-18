@@ -10,6 +10,9 @@ export interface ICaption {
     delayText: string;
     loadingText: string;
   };
+  datePicker: {
+    label: string;
+  };
   courseList: {
     title: string;
   };
@@ -35,6 +38,9 @@ export const captions: Record<string, ICaption> = {
       delayText: 'This text has appeared after 4 seconds',
       loadingText: 'This is loading...',
     },
+    datePicker: {
+      label: 'Select a date:',
+    },
     courseList: {
       title: 'Course List',
     },
@@ -57,6 +63,9 @@ export const captions: Record<string, ICaption> = {
       anotherAction: 'عملیات دیگر',
       delayText: 'این متن پس از ۴ ثانیه ظاهر شده است',
       loadingText: 'در حال بارگذاری...',
+    },
+    datePicker: {
+      label: 'یک تاریخ انتخاب کنید:',
     },
     courseList: {
       title: 'لیست دوره‌ها',
