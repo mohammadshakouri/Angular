@@ -14,6 +14,7 @@ import { authInterceptor } from './interceptors/auth-interceptor';
 import { loggingInterceptor } from './interceptors/logging-interceptor';
 import { AppEnvService } from './services/app-env';
 import { initialInterceptor } from './interceptors/initial-interceptor';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,5 +29,6 @@ export const appConfig: ApplicationConfig = {
       const appEnv = inject(AppEnvService);
       return appEnv.load();
     }),
+    {provide: MAT_DATE_LOCALE, useValue: 'fa-IR'},
   ],
 };

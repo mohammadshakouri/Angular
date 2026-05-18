@@ -1,4 +1,6 @@
 {
   "apiBaseUrl": "https://api.simac.ir",
-  "appName": "Simac"
+  "appName": "Simac",
+  "direction": "rtl",
+  "language": "fa"
 }
