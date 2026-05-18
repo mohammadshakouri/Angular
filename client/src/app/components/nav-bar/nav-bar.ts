@@ -5,6 +5,7 @@ import { map } from 'rxjs/internal/operators/map';
 import { startWith } from 'rxjs/internal/operators/startWith';
 import { interval } from 'rxjs/internal/observable/interval';
 import { AsyncPipe } from '@angular/common';
+import { CaptionService } from '../../services/caption.service';
 
 @Component({
   selector: 'nav-bar',
@@ -12,8 +13,11 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.scss',
 })
+
 export class NavBar {
-currentTime$ = interval(1000).pipe(
+  constructor(public caption: CaptionService) {}
+
+  currentTime$ = interval(1000).pipe(
     startWith(0),
     map(() => new Date())
   );

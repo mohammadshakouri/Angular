@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Home</a>
+    <a class="navbar-brand" routerLink="/">{{ caption.get('nav.home') }}</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,11 +15,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
+          <a class="nav-link" routerLink="/courses" routerLinkActive="active">{{ caption.get('nav.courses') }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-course" routerLinkActive="active"
-            >Create Course</a
+            >{{ caption.get('nav.createCourse') }}</a
           >
         </li>
         <li class="nav-item dropdown">
@@ -50,7 +50,7 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        time: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
+        {{ caption.get('nav.time') }}: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-success" type="submit">Search</button> -->
       </form>
