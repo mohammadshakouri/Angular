@@ -5,7 +5,7 @@
 
 .main-content {
   flex: 1;
-  margin-left: 20vw;
+  margin-left: 15vw;
   overflow: auto;
   padding: 1.5rem;
   transition: margin-left 0.3s ease, margin-right 0.3s ease;
@@ -13,7 +13,7 @@
 
 .app-layout[data-dir="rtl"] .main-content {
   margin-left: 0;
-  margin-right: 20vw;
+  margin-right: 15vw;
 }
 
 @media (max-width: 768px) {
@@ -31,7 +31,7 @@
   }
 }
 
-.conatainer {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
