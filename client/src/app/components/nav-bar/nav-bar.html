@@ -1,57 +1,105 @@
-<nav class="navbar navbar-expand-lg bg-light radius-2">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">{{ caption.get('nav.home') }}</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+<nav class="top-navbar" [attr.data-dir]="direction">
+  <div class="navbar-content">
+    <!-- Hamburger button for mobile (hidden when sidebar is open) -->
+    <button class="hamburger-btn" (click)="toggleSidebar()" [class.hidden]="isSidebarOpen" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/courses" routerLinkActive="active">{{ caption.get('nav.courses') }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-course" routerLinkActive="active"
-            >{{ caption.get('nav.createCourse') }}</a
-          >
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-        {{caption.get('nav.dropdown')}}
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">{{ caption.get('nav.action') }}</a></li>
-            <li><a class="dropdown-item" href="#">{{ caption.get('nav.anotherAction') }}</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">
-            @defer (on timer(4000ms)) {
-              <span>{{ caption.get('nav.delayText') }}</span>
-            } @loading {
-              <span>{{ caption.get('nav.loadingText') }}</span>
-            }
-          </a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        {{ caption.get('nav.time') }}: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
-        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button> -->
-      </form>
-    </div>
+    <!-- Close button for mobile (shown when sidebar is open) -->
+    <button class="close-btn" *ngIf="isSidebarOpen" (click)="toggleSidebar()" aria-label="Close menu">
+      <span class="close-icon"></span>
+    </button>
+    <!-- Space for future content -->
+    <div class="navbar-spacer"></div>
   </div>
 </nav>
+
+<div class="sidebar-overlay" *ngIf="isSidebarOpen" (click)="closeSidebar()"></div>
+<aside class="sidebar" [attr.data-dir]="direction" [class.open]="isSidebarOpen">
+  <div class="sidebar-header">
+    <a class="sidebar-brand" routerLink="/" (click)="closeSidebar()">{{ caption.get('nav.home') }}</a>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/courses" routerLinkActive="active" (click)="closeSidebar()">{{ caption.get('nav.courses') }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
+          >{{ caption.get('nav.createCourse') }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown-toggle" (click)="toggleDropdown(0)" [class.open]="isDropdownOpen(0)">
+          <span class="nav-label">{{ caption.get('nav.dropdown') }}</span>
+          <span class="dropdown-arrow"></span>
+        </button>
+        <ul class="sub-nav-list" [class.open]="isDropdownOpen(0)">
+          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ caption.get('nav.action') }}</a></li>
+          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ caption.get('nav.anotherAction') }}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="time-display">
+      {{ caption.get('nav.time') }}: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
+    </div>
+  </div>
+</aside>

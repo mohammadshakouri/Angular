@@ -7,7 +7,6 @@ export interface ICaption {
     dropdown: string;
     action: string;
     anotherAction: string;
-    delayText: string;
     loadingText: string;
   };
   datePicker: {
@@ -35,7 +34,6 @@ export const captions: Record<string, ICaption> = {
       dropdown: 'Dropdown',
       action: 'Action',
       anotherAction: 'Another action',
-      delayText: 'This text has appeared after 4 seconds',
       loadingText: 'This is loading...',
     },
     datePicker: {
@@ -61,7 +59,6 @@ export const captions: Record<string, ICaption> = {
       dropdown: 'منو',
       action: 'عملیات',
       anotherAction: 'عملیات دیگر',
-      delayText: 'این متن پس از ۴ ثانیه ظاهر شده است',
       loadingText: 'در حال بارگذاری...',
     },
     datePicker: {
