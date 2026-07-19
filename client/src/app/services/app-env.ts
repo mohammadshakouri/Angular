@@ -13,6 +13,7 @@ interface IAppEnv {
 @Injectable({
   providedIn: 'root',
 })
+
 export class AppEnvService {
   private config: IAppEnv = {
     apiBaseUrl: '',
