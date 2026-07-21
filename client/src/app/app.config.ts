@@ -14,7 +14,6 @@ import { authInterceptor } from './interceptors/auth-interceptor';
 import { loggingInterceptor } from './interceptors/logging-interceptor';
 import { AppEnvService } from './services/app-env';
 import { initialInterceptor } from './interceptors/initial-interceptor';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { CaptionService } from './services/caption.service';
 
 export const appConfig: ApplicationConfig = {
@@ -32,6 +31,5 @@ export const appConfig: ApplicationConfig = {
       await appEnv.load();
       captionService.setCulture(appEnv.culture);
     }),
-    { provide: MAT_DATE_LOCALE, useFactory: () => inject(AppEnvService).culture },
   ],
-};          
+};

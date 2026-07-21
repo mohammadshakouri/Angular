@@ -1,7 +1,4 @@
-<mat-form-field>
-  <mat-label>{{ i18n.datePicker.label }}</mat-label>
-  <input matInput [matDatepicker]="picker">
-  <mat-hint></mat-hint>
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<label class="date-picker">
+  <span class="date-picker__label">{{ i18n.datePicker.label }}</span>
+  <input type="date" class="date-picker__input" />
+</label>
