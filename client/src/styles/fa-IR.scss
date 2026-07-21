@@ -1,8 +1,10 @@
+@use 'typography';
+
 body {
-  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+  font-family: typography.$font-family-base;
   background-color: #1e47949c;
 }
 
 .navbar {
-  font-size: 1.1rem;
+  @include typography.type-scale('lg');
 }

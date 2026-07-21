@@ -1,0 +1,61 @@
+// Design system responsive grid — Figma "Grid layouts" foundation
+// https://www.figma.com/design/2IwYHVhUUNUYRSUBC7nNn1/Simac-Phase-1-FA?node-id=1532-353584
+@use 'spacing';
+
+// Mobile: 375px reference viewport, 4 columns, 16px gutter/margin
+$grid-mobile-columns: 4;
+$grid-mobile-gutter: 16px;
+$grid-mobile-margin: 16px;
+
+// Tablet: 768px container, 6 columns, 32px gutter/margin
+$grid-tablet-columns: 6;
+$grid-tablet-gutter: 32px;
+$grid-tablet-margin: 32px;
+
+// Desktop: 1280px container, 12 columns, 32px gutter/margin
+$grid-desktop-columns: 12;
+$grid-desktop-gutter: 32px;
+$grid-desktop-margin: 32px;
+
+// Responsive max-width + side-margin wrapper.
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $grid-mobile-margin;
+
+  @media (min-width: spacing.$breakpoint-md) {
+    max-width: spacing.$breakpoint-md;
+    padding-inline: $grid-tablet-margin;
+  }
+
+  @media (min-width: spacing.$breakpoint-lg) {
+    max-width: spacing.$breakpoint-lg;
+  }
+
+  @media (min-width: spacing.$breakpoint-xl) {
+    max-width: spacing.$breakpoint-xl;
+    padding-inline: $grid-desktop-margin;
+  }
+}
+
+// Responsive column grid: 4 columns on mobile, 6 on tablet, 12 on desktop.
+.grid {
+  display: grid;
+  gap: $grid-mobile-gutter;
+  grid-template-columns: repeat($grid-mobile-columns, 1fr);
+
+  @media (min-width: spacing.$breakpoint-md) {
+    gap: $grid-tablet-gutter;
+    grid-template-columns: repeat($grid-tablet-columns, 1fr);
+  }
+
+  @media (min-width: spacing.$breakpoint-xl) {
+    gap: $grid-desktop-gutter;
+    grid-template-columns: repeat($grid-desktop-columns, 1fr);
+  }
+}
+
+// Span N columns of the current breakpoint's .grid (clamped to that breakpoint's column count elsewhere).
+@mixin col-span($count) {
+  grid-column: span $count;
+}

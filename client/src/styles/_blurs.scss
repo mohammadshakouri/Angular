@@ -1,0 +1,11 @@
+// Design system background blurs — Figma "Blurs" foundation
+// https://www.figma.com/design/2IwYHVhUUNUYRSUBC7nNn1/Simac-Phase-1-FA?node-id=1532-352913
+$blur-sm: 4px;
+$blur-md: 8px;
+$blur-lg: 12px;
+$blur-xl: 20px;
+
+@mixin backdrop-blur($radius) {
+  backdrop-filter: blur($radius);
+  -webkit-backdrop-filter: blur($radius);
+}
