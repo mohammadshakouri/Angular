@@ -5,10 +5,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 50px;
   background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #5e5d61;
   z-index: 1003;
+  justify-content: end;
 }
 
 .navbar-content {
@@ -30,8 +31,8 @@
 
   /* Add padding to sidebar to account for top navbar */
   .sidebar {
-    top: 60px;
-    height: calc(100vh - 60px);
+    position: fixed;
+    height: calc(100vh - 50px);
   }
 }
 
@@ -123,15 +124,11 @@
   width: 15vw;
   min-width: 200px;
   max-width: 400px;
-  height: 100vh;
-  background-color: #f8f9fa;
+  height: 100%;
+  background-color: #18172b;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
   overflow-y: auto;
-  border-right: 1px solid #dee2e6;
   transition: left 0.3s ease, right 0.3s ease, transform 0.3s ease;
   z-index: 1000;
 }
@@ -140,7 +137,6 @@
   left: auto;
   right: 0;
   border-right: none;
-  border-left: 1px solid #dee2e6;
 }
 
 /* Mobile responsive */
@@ -151,8 +147,7 @@
     max-width: 300px;
     transform: translateX(-100%);
     left: 0;
-    top: 0;
-    z-index: 1001;
+    z-index: 1004;
 
     &.open {
       transform: translateX(0);
@@ -188,13 +183,14 @@
 .sidebar-header {
   padding: 1.5rem;
   border-bottom: 1px solid #dee2e6;
+  height: 50px;
 }
 
 .sidebar-brand {
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
-  color: #333;
+  color: #e6d6a5;
   display: block;
 
   &:hover {
@@ -220,21 +216,20 @@
   .nav-link {
     display: block;
     padding: 0.75rem 1.5rem;
-    color: #495057;
+    color: #e2e6d3;
     text-decoration: none;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
 
     &:hover {
-      background-color: #e9ecef;
-      color: #0d6efd;
-      border-left-color: #0d6efd;
+      background-color: #1f1e36;
+      color: #c6dbfa;
+      border-left-color: #9ea6b3;
     }
 
     &.active {
-      background-color: #e7f1ff;
-      color: #0d6efd;
-      border-left-color: #0d6efd;
+      background-color: #5d7494;
+      color: #ddeafd;
       font-weight: 500;
     }
   }
