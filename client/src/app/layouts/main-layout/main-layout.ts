@@ -1,8 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppEnvService } from '../../services/app-env';
 import { RouterOutlet } from '@angular/router';
 import { NavBar } from '../../components/nav-bar/nav-bar';
-import { DatePicker } from '../../components/date-picker/date-picker';
 
 @Component({
   selector: 'app-main-layout',
@@ -11,8 +10,10 @@ import { DatePicker } from '../../components/date-picker/date-picker';
   styleUrl: './main-layout.scss',
 })
 export class MainLayout {
+  direction: string;
 
   constructor(private appEnv: AppEnvService) {
-      console.log('AppEnvService api base url:', this.appEnv.apiBaseUrl);
+    console.log('AppEnvService api base url:', this.appEnv.apiBaseUrl);
+    this.direction = this.appEnv.direction;
   }
 }

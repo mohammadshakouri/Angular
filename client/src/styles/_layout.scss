@@ -1,0 +1,26 @@
+// Shared layout dimensions for the app shell (nav-bar + main-layout)
+$sidebar-width: clamp(200px, 15vw, 400px);
+$topnav-height: 50px;
+
+// Thin, rounded, "overlay style" scrollbar for both Firefox and WebKit browsers.
+@mixin modern-scrollbar($thumb, $thumb-hover: $thumb, $track: transparent, $size: 8px) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb $track;
+
+  &::-webkit-scrollbar {
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb;
+    border-radius: $size;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $thumb-hover;
+  }
+}

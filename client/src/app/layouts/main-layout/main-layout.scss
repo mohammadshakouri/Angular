@@ -1,21 +1,33 @@
+@use '../../../styles/colors';
+@use '../../../styles/layout';
+
 .app-layout {
-  display: flex;
-  gap: 1rem;
+  height: 100vh;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  overflow: auto;
+  height: 100vh;
+  overflow-y: auto;
   padding: 1.5rem;
-  transition: margin-inline-start 0.3s ease, margin-inline-end 0.3s ease;
+  margin-inline-start: layout.$sidebar-width;
+  transition: margin-inline-start 0.3s ease;
+  @include layout.modern-scrollbar(colors.$color-gray-300, colors.$color-gray-400);
+}
+
+// Make the scrollbar side explicit rather than relying on inheriting `dir`
+// from <html>: rtl puts the scrollbar on this box's own left edge, i.e. the
+// outer edge of the page, away from the sidebar.
+.app-layout[data-dir='rtl'] .main-content {
+  direction: rtl;
 }
 
 @media (max-width: 768px) {
   .main-content {
-    margin-inline: 0;
-    margin-top: 60px;
+    height: calc(100vh - #{layout.$topnav-height});
+    margin-inline-start: 0;
+    margin-top: layout.$topnav-height;
     padding: 1rem;
   }
 }

@@ -1,3 +1,5 @@
+@use '../../../styles/layout';
+
 /* Top Navigation Bar */
 .top-navbar {
   display: none;
@@ -5,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: layout.$topnav-height;
   background-color: #f8f9fa;
   border-bottom: 1px solid #5e5d61;
   z-index: 1003;
@@ -29,10 +31,10 @@
     display: flex;
   }
 
-  /* Add padding to sidebar to account for top navbar */
+  /* Push the sidebar down to sit below the top navbar */
   .sidebar {
-    position: fixed;
-    height: calc(100vh - 50px);
+    top: layout.$topnav-height;
+    height: calc(100vh - #{layout.$topnav-height});
   }
 }
 
@@ -121,22 +123,16 @@
 }
 
 .sidebar {
-  width: 15vw;
-  min-width: 200px;
-  max-width: 400px;
+  position: fixed;
+  top: 0;
+  inset-inline-start: 0;
+  width: layout.$sidebar-width;
   height: 100vh;
   background-color: #18172b;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  transition: left 0.3s ease, right 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
   z-index: 1000;
-}
-
-.sidebar[data-dir="rtl"] {
-  left: auto;
-  right: 0;
-  border-right: none;
 }
 
 /* Mobile responsive */
@@ -146,7 +142,6 @@
     min-width: 200px;
     max-width: 300px;
     transform: translateX(-100%);
-    left: 0;
     z-index: 1004;
 
     &.open {
@@ -203,6 +198,18 @@
   flex: 1;
   padding: 1rem 0;
   overflow-y: auto;
+  @include layout.modern-scrollbar(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.32));
+}
+
+/* Keep the box itself ltr so the native scrollbar renders on its physical
+   right edge (the outer edge of the sidebar), then flip the content back
+   to rtl so text and mirrored styles stay correct. */
+.sidebar[data-dir='rtl'] .sidebar-nav {
+  direction: ltr;
+
+  .nav-list {
+    direction: rtl;
+  }
 }
 
 .nav-list {
