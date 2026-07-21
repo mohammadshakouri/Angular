@@ -7,7 +7,6 @@
 
 @each $name, $values in typography.$type-scale {
   .text-#{$name} {
-    font-family: typography.$font-family-base;
     font-size: list.nth($values, 1);
     line-height: list.nth($values, 2);
     letter-spacing: list.nth($values, 3);

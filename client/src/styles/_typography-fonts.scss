@@ -1,0 +1,15 @@
+// @font-face declarations for the IRANSansXFaNum family.
+// Included once from the main styles.scss entry point — locale bundles
+// (en-US.scss/fa-IR.scss) only need `@use 'typography'` for the tokens,
+// since @font-face rules would otherwise be re-emitted into every bundle.
+@use 'typography';
+
+@each $weight, $suffix in typography.$iransansx-faces {
+  @font-face {
+    font-family: 'IRANSansXFaNum';
+    font-weight: #{$weight};
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/fonts/IRANSansX/AnyConv.com__IRANSansXFaNum-#{$suffix}.ttf') format('truetype');
+  }
+}

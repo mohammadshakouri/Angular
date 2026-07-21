@@ -4,7 +4,21 @@
 @use 'sass:list';
 @use 'sass:map';
 
-$font-family-base: 'IRANSansXFaNum', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// name: (weight, filename suffix) — consumed by typography-fonts.scss to emit @font-face once globally
+$iransansx-faces: (
+  100: 'Thin',
+  200: 'UltraLight',
+  300: 'Light',
+  400: 'Regular',
+  500: 'Medium',
+  600: 'DemiBold',
+  700: 'Bold',
+  800: 'ExtraBold',
+  900: 'Black',
+);
+
+$font-family-base-fa: 'IRANSansXFaNum', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-base-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -28,7 +42,6 @@ $type-scale: (
 
 @mixin type-scale($name, $weight: $font-weight-regular) {
   $values: map.get($type-scale, $name);
-  font-family: $font-family-base;
   font-size: list.nth($values, 1);
   line-height: list.nth($values, 2);
   letter-spacing: list.nth($values, 3);
