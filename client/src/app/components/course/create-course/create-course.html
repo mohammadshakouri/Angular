@@ -1,11 +1,10 @@
 <div class="create-course">
-  <h2>Create Course</h2>
+  <h2>{{ i18n.course.create }}</h2>
   <form (ngSubmit)="handleCreateCourse()">
     <div class="mb-3">
-      <label for="title" class="form-label">Title:</label>
+      <label for="title" class="form-label">{{ i18n.course.title }}:</label>
       <input
         type="text"
-        class="form-control"
         id="title"
         name="title"
         [(ngModel)]="course.title"
@@ -13,9 +12,8 @@
       />
     </div>
     <div class="mb-3">
-      <label for="description" class="form-label">Description:</label>
+      <label for="description" class="form-label">{{ i18n.course.description }}:</label>
       <textarea
-        class="form-control"
         id="description"
         name="description"
         [(ngModel)]="course.description"
@@ -23,16 +21,15 @@
       ></textarea>
     </div>
     <div class="mb-3">
-      <label for="price" class="form-label">Price (in USD):</label>
+      <label for="price" class="form-label">{{ i18n.course.price }}</label>
       <input
         type="number"
-        class="form-control"
         id="price"
         name="price"
         [(ngModel)]="course.price"
         required
       />
     </div>
-    <button type="submit" class="btn btn-primary">add Course</button>
+    <button type="submit">{{ i18n.course.add }}</button>
   </form>
 </div>

@@ -1,3 +1,11 @@
+export type DotNestedKeys<T> = T extends object
+  ? {
+      [K in keyof T & string]: T[K] extends string
+        ? K
+        : `${K}.${DotNestedKeys<T[K]>}`;
+    }[keyof T & string]
+  : never;
+
 export interface ICaption {
   nav: {
     home: string;
@@ -22,7 +30,16 @@ export interface ICaption {
     priceLabel: string;
     addButton: string;
   };
+  course:{
+    title: string;
+    create:string,
+    description: string;
+    price: string;
+    add: string;
+  }
 }
+
+export type CaptionKey = DotNestedKeys<ICaption>;
 
 export const captions: Record<string, ICaption> = {
   'en-US': {
@@ -49,6 +66,14 @@ export const captions: Record<string, ICaption> = {
       priceLabel: 'Price (in USD):',
       addButton: 'Add Course',
     },
+    course: {
+      title: 'Course',
+      create: 'Create Course',
+      description: 'Description',
+      price: 'Price',
+      add: 'Add Course',
+    }
+
   },
   'fa-IR': {
     nav: {
@@ -74,5 +99,12 @@ export const captions: Record<string, ICaption> = {
       priceLabel: 'قیمت (تومان):',
       addButton: 'افزودن دوره',
     },
+    course: {
+      title: 'دوره',
+      create: 'ایجاد دوره',
+      description: 'توضیحات',
+      price: 'قیمت',
+      add: 'افزودن دوره',
+    }
   },
 };

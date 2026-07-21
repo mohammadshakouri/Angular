@@ -18,88 +18,88 @@
 <div class="sidebar-overlay" *ngIf="isSidebarOpen" (click)="closeSidebar()"></div>
 <aside class="sidebar" [attr.data-dir]="direction" [class.open]="isSidebarOpen">
   <div class="sidebar-header">
-    <a class="sidebar-brand" routerLink="/" (click)="closeSidebar()">{{ caption.get('nav.home') }}</a>
+    <a class="sidebar-brand" routerLink="/" (click)="closeSidebar()">{{ i18n.nav.home }}</a>
   </div>
   <nav class="sidebar-nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/courses" routerLinkActive="active" (click)="closeSidebar()">{{ caption.get('nav.courses') }}</a>
+        <a class="nav-link" routerLink="/courses" routerLinkActive="active" (click)="closeSidebar()">{{ i18n.nav.courses }}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/create-course2" routerLinkActive="active" (click)="closeSidebar()"
-          >{{ caption.get('nav.createCourse') }}</a
+          >{{ i18n.nav.createCourse }}</a
         >
       </li>
       <li class="nav-item">
         <button class="nav-dropdown-toggle" (click)="toggleDropdown(0)" [class.open]="isDropdownOpen(0)">
-          <span class="nav-label">{{ caption.get('nav.dropdown') }}</span>
+          <span class="nav-label">{{ i18n.nav.dropdown }}</span>
           <span class="dropdown-arrow"></span>
         </button>
         <ul class="sub-nav-list" [class.open]="isDropdownOpen(0)">
-          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ caption.get('nav.action') }}</a></li>
-          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ caption.get('nav.anotherAction') }}</a></li>
+          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ i18n.nav.action }}</a></li>
+          <li><a class="nav-link sub-link" href="#" (click)="closeSidebar()">{{ i18n.nav.anotherAction }}</a></li>
         </ul>
       </li>
     </ul>
   </nav>
   <div class="sidebar-footer">
     <div class="time-display">
-      {{ caption.get('nav.time') }}: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
+      {{ i18n.nav.time }}: {{ currentTime$ | async | jalaliDate: 'YYYY/MM/DD HH:mm:ss' }}
     </div>
   </div>
 </aside>

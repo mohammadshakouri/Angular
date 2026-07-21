@@ -3,7 +3,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
-import { CaptionService } from '../../services/caption.service';
+import { injectI18n } from '../../services/caption.service';
 
 @Component({
   selector: 'date-picker',
@@ -14,6 +14,5 @@ import { CaptionService } from '../../services/caption.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DatePicker {
-
-  constructor(public caption: CaptionService) {}
+  i18n = injectI18n();
 }

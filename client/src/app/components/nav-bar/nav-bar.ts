@@ -5,7 +5,7 @@ import { map } from 'rxjs/internal/operators/map';
 import { startWith } from 'rxjs/internal/operators/startWith';
 import { interval } from 'rxjs/internal/observable/interval';
 import { AsyncPipe } from '@angular/common';
-import { CaptionService } from '../../services/caption.service';
+import { injectI18n } from '../../services/caption.service';
 import { AppEnvService } from '../../services/app-env';
 import { CommonModule } from '@angular/common';
 
@@ -20,11 +20,9 @@ export class NavBar {
   direction: string;
   expandedDropdowns: Set<number> = new Set();
   isSidebarOpen: boolean = false;
+  i18n = injectI18n();
 
-  constructor(
-    public caption: CaptionService,
-    private appEnv: AppEnvService
-  ) {
+  constructor(private appEnv: AppEnvService) {
     this.direction = this.appEnv.direction;
   }
 

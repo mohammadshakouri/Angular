@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { createCourseDto } from '../../../dtoS/courseDto';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { CourseService } from '../../../services/courseService';
+import { injectI18n } from '../../../services/caption.service';
 
 @Component({
   selector: 'create-course',
@@ -10,7 +11,9 @@ import { CourseService } from '../../../services/courseService';
   styleUrl: './create-course.scss',
 })
 export class CreateCourse {
-  constructor(private courseService: CourseService) {}
+  private courseService: CourseService = inject(CourseService);
+  i18n = injectI18n();
+
   course: createCourseDto = {
     title: '',
     description: '',
@@ -26,8 +29,7 @@ export class CreateCourse {
         description: '',
         price: 0,
       };
-    }
-    else {
+    } else {
       alert('Please fill in all fields and ensure price is greater than 0.');
     }
   }
