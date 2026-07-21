@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   color-scheme: light;
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);

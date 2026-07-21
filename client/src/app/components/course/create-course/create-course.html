@@ -1,8 +1,8 @@
 <div class="create-course">
   <h2>{{ i18n.course.create }}</h2>
   <form (ngSubmit)="handleCreateCourse()">
-    <div class="mb-3">
-      <label for="title" class="form-label">{{ i18n.course.title }}:</label>
+    <div>
+      <label for="title">{{ i18n.course.title }}:</label>
       <input
         type="text"
         id="title"
@@ -11,17 +11,17 @@
         required
       />
     </div>
-    <div class="mb-3">
-      <label for="description" class="form-label">{{ i18n.course.description }}:</label>
-      <textarea
+    <div>
+      <label for="description">{{ i18n.course.description }}:</label>
+      <input
         id="description"
         name="description"
         [(ngModel)]="course.description"
         required
-      ></textarea>
+      />
     </div>
-    <div class="mb-3">
-      <label for="price" class="form-label">{{ i18n.course.price }}</label>
+    <div>
+      <label for="price">{{ i18n.course.price }}</label>
       <input
         type="number"
         id="price"
