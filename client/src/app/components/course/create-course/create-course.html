@@ -7,7 +7,7 @@
         type="text"
         id="title"
         name="title"
-        [(ngModel)]="course.title"
+        [formField]="loginForm.title"
         required
       />
     </div>
@@ -16,7 +16,7 @@
       <input
         id="description"
         name="description"
-        [(ngModel)]="course.description"
+        [formField]="loginForm.description"
         required
       />
     </div>
@@ -26,7 +26,7 @@
         type="number"
         id="price"
         name="price"
-        [(ngModel)]="course.price"
+        [formField]="loginForm.price"
         required
       />
     </div>
